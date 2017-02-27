@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XamlTagApp.Child1Page" Title="Page1" >
+  <Label Text="{Binding MainText}" VerticalOptions="Center" HorizontalOptions="Center"/>
+  <ContentPage.Padding>
+    <OnPlatform x:TypeArguments="Thickness" Android="20, 20, 20, 20"
+                iOS="20, 20, 20, 20" />
+  </ContentPage.Padding>
+  <StackLayout Padding="8">
+    <Label x:Name="text"
+           Text="1ページ"
+           HorizontalTextAlignment="Center"
+           FontSize="40"
+           TextColor="White"/>
+   <Label x:Name="viewText"
+           Text="Total"
+           HorizontalTextAlignment="Center"
+           FontSize="35"
+          TextColor="White"/>
+    <Entry x:Name="inputForm"
+           Placeholder="Input price"
+           TextColor="White"
+           Text="0" />
+    <Button x:Name="calcBtn" Text="計算" BorderColor="White"/>
+  </StackLayout>
+</ContentPage>

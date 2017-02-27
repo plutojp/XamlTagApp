@@ -7,11 +7,16 @@ using Xamarin.Forms;
 
 namespace XamlTagApp
 {
-    public partial class MainPage : ContentPage
+    public partial class MainPage : TabbedPage
     {
         public MainPage()
         {
-            InitializeComponent();
+            //InitializeComponent();
+            Children.Add(new Child1Page() {
+                BackgroundColor = Color.FromHex("666666"),
+            });
+
+            Children.Add(new Child2Page() { BackgroundColor = Color.FromHex("666666")});
         }
     }
 }

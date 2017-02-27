@@ -1,11 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:XamlTagApp"
              x:Class="XamlTagApp.MainPage">
 
-  <Label Text="Welcome to Xamarin Forms!"
+  <!--<Label Text="Welcome to Xamarin Forms!"
            VerticalOptions="Center"
-           HorizontalOptions="Center" />
-
-</ContentPage>
+           HorizontalOptions="Center" />-->
+  <TabbedPage.Padding>
+    <OnPlatform x:TypeArguments="Thickness" Android="20, 20, 20, 20"
+                iOS="20, 20, 20, 20" />
+  </TabbedPage.Padding>
+</TabbedPage>
