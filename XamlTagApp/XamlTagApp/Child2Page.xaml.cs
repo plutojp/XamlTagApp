@@ -13,30 +13,23 @@ namespace XamlTagApp
 {
     public partial class Child2Page : ContentPage
     {
-        ObservableCollection<ListItem> listItems = new ObservableCollection<ListItem>();
+        private ObservableCollection<string> msgList = new ObservableCollection<string>();
+
         public Child2Page()
         {
             InitializeComponent();
-            AddlistItem(0);
-
-            var cell = new DataTemplate(typeof(TextCell));
-            cell.SetBinding(TextCell.TextColorProperty,"TextItem");
-            cell.SetBinding(TextCell.DetailProperty, "DetailItem");
-
-            var list = new ListView {
-                ItemsSource=listItems,
-                ItemTemplate = cell,
-            };
-
+            Title = "message";
+            msgListView.ItemsSource = msgList;
         }
 
-        void AddlistItem(int n)
+        void OnSendTapped(object sender, EventArgs args)
         {
-            foreach (var j in Enumerable.Range(n,25))
+            if (msgEntry.Text != null && msgEntry.Text.Length > 0)
             {
-                listItems.Add(new ListItem { TextItem = "TextData＝" + j, DetailItem = "DetailItem＝" + j });
-
+                msgList.Add(msgEntry.Text);
+                msgEntry.Text = "";
             }
+
         }
     }
 }

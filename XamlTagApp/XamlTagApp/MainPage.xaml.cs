@@ -12,11 +12,9 @@ namespace XamlTagApp
         public MainPage()
         {
             //InitializeComponent();
-            Children.Add(new Child1Page() {
-                BackgroundColor = Color.FromHex("666666"),
-            });
-
+            Children.Add(new Child1Page() {BackgroundColor = Color.FromHex("666666"),});
             Children.Add(new Child2Page() { BackgroundColor = Color.FromHex("666666")});
+           // Children.Add(new Child3Page() { BackgroundColor = Color.FromHex("666660") });
         }
     }
 }

@@ -11,13 +11,11 @@
     <Label x:Name="text"
            Text="2ページ"
            HorizontalTextAlignment="Center"
-           FontSize="40"/>
-    <ListView x:Name="list" ItemsSource ="{Binding}">
-      <ListView.ItemTemplate>
-        <DataTemplate>
-          <TextCell Text="{Binding TextItem}" Detail="{Binding DetailItem}"/>
-        </DataTemplate>
-      </ListView.ItemTemplate>
-    </ListView>
+           FontSize="25"/>
+    <ListView x:Name="msgListView" VerticalOptions="FillAndExpand"></ListView>
+    <StackLayout Orientation="Vertical" VerticalOptions="End">
+      <Entry x:Name="msgEntry" Placeholder="ここにメッセージ入力してね。・・・・" Keyboard="Text"/>
+      <Button x:Name="sendBt" Text="メッセージ送信" WidthRequest="80" Clicked="OnSendTapped" />
+    </StackLayout>
   </StackLayout>
 </ContentPage>
