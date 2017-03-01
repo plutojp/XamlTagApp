@@ -13,6 +13,7 @@ namespace XamlTagApp
         public Child1Page()
         {
             InitializeComponent();
+            Title = "Calc";
             calcBtn.Clicked += (sender, e) =>
             {
                 double d = 0d;
@@ -22,6 +23,5 @@ namespace XamlTagApp
                 }
             };
         }
-        
     }
 }

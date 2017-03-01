@@ -12,9 +12,44 @@
            Text="2ページ"
            HorizontalTextAlignment="Center"
            FontSize="25"/>
-    <ListView x:Name="msgListView" VerticalOptions="FillAndExpand"></ListView>
-    <StackLayout Orientation="Vertical" VerticalOptions="End">
+    <ListView x:Name="msgListView"  VerticalOptions="FillAndExpand">
+      <ListView.ItemTemplate>
+        <DataTemplate>
+          <!--<TextCell Text="{Binding TextItem}" Detail="{Binding DetailItem}"  DetailColor="Blue" />-->
+          <ViewCell>
+            <StackLayout BackgroundColor="White" Orientation="Vertical" >
+              <Label Text="{Binding TextItem}" TextColor="Fuchsia" Style="{DynamicResource TitleStyle}" />
+              <Label Text="{Binding DetailItem}"  TextColor="Navy"/>
+            </StackLayout>
+          </ViewCell>
+        </DataTemplate>
+      </ListView.ItemTemplate>
+    </ListView>
+    <!--<ListView x:Name="msgListView" ItemsSource="{Binding}"  VerticalOptions="FillAndExpand">
+      <ListView.ItemTemplate>
+        <DataTemplate>
+          <TextCell Text="{Binding TextItem}" Detail="{Binding DetailItem}"  DetailColor="Blue" />
+                    <ViewCell>
+            <StackLayout Orientation="Horizontal" Padding="5">
+              <Label Text="{Binding TextItem}" TextColor="Fuchsia"/>
+              <Label Text="{Binding DetailItem}"  TextColor="Navy"/>
+            </StackLayout>
+          </ViewCell>
+        </DataTemplate>
+      </ListView.ItemTemplate>
+    </ListView>-->
+    <StackLayout Orientation="Vertical" >
       <Entry x:Name="msgEntry" Placeholder="ここにメッセージ入力してね。・・・・" Keyboard="Text"/>
+      <!--<StackLayout Padding="5,10">-->
+             <Editor x:Name="editor" BackgroundColor="White" HeightRequest="50"/>
+               <!-- <Editor.BackgroundColor>
+                 <OnPlatform x:TypeArguments="Color"
+                                        iOS="#f0ffff"
+                                        Android="#f0ffff"
+                                        WinPhone="#f0ffff" />
+               </Editor.BackgroundColor>
+            </Editor>-->
+      <!--</StackLayout>-->
       <Button x:Name="sendBt" Text="メッセージ送信" WidthRequest="80" Clicked="OnSendTapped" />
     </StackLayout>
   </StackLayout>

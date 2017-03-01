@@ -13,11 +13,11 @@
            HorizontalTextAlignment="Center"
            FontSize="25"
            TextColor="White"/>
-   <Label x:Name="viewText"
-           Text="Total"
-           HorizontalTextAlignment="Center"
-           FontSize="35"
-          TextColor="White"/>
+    <Label x:Name="viewText"
+            Text="Total"
+            HorizontalTextAlignment="Center"
+            FontSize="35"
+           TextColor="White"/>
     <Entry x:Name="inputForm"
            Placeholder="Input price"
            TextColor="White"
