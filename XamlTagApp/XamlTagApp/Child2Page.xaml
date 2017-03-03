@@ -12,45 +12,46 @@
            Text="2ページ"
            HorizontalTextAlignment="Center"
            FontSize="25"/>
-    <ListView x:Name="msgListView"  VerticalOptions="FillAndExpand">
+    <!--<StackLayout Orientation="Vertical" Padding="20, 20, 20, 20">
+        <Button x:Name="firstBt" Text="先頭" WidthRequest="20" Clicked="OnFirstView" />
+        <Button x:Name="lastBt" Text="最後" WidthRequest="20" Clicked="OnLastView" />
+     </StackLayout>-->
+     <ListView x:Name="msgListView" VerticalOptions="FillAndExpand" HasUnevenRows="True" ItemSelected="OnItemSelected">
+    <!--<ListView x:Name="msgListView" VerticalOptions="FillAndExpand" HasUnevenRows="True">-->
+      <!-- ListViewの各項目の高さが可変になる-->
       <ListView.ItemTemplate>
         <DataTemplate>
-          <!--<TextCell Text="{Binding TextItem}" Detail="{Binding DetailItem}"  DetailColor="Blue" />-->
+          <!--　TextCellで表示したときは下記のコードで記載する。-->
+          <!-- <TextCell Text="{Binding TextItem}" Detail="{Binding DetailItem}"  DetailColor="Blue" />-->
+          <!-- 表示を自分でカスタムする時の記載方法 ※細かい表示設定の時はCustomViewを作って1行で記載した法が簡潔にコーディングできていい。 -->
           <ViewCell>
-            <StackLayout BackgroundColor="White" Orientation="Vertical" >
-              <Label Text="{Binding TextItem}" TextColor="Fuchsia" Style="{DynamicResource TitleStyle}" />
-              <Label Text="{Binding DetailItem}"  TextColor="Navy"/>
+            <ViewCell.ContextActions>
+            <MenuItem Clicked="OnMore" CommandParameter="{Binding .}"
+               Text="More" />
+            <MenuItem Clicked="OnDelete" CommandParameter="{Binding .}"
+               Text="Delete" IsDestructive="True" />
+         </ViewCell.ContextActions>
+            <StackLayout BackgroundColor="White" Orientation="Vertical" Padding="15,0" VerticalOptions="Start">
+              <Label Text="{Binding ItemId}" TextColor="Transparent"/>
+              <!-- 入力データ表示 -->
+              <StackLayout BackgroundColor="White" Orientation="Horizontal" Padding="10" VerticalOptions="Start">
+                <Label Text="{Binding TextItem}" TextColor="Fuchsia" Style="{DynamicResource TitleStyle}" />
+                <Label Text="{Binding SummaryItem}"  TextColor="Navy"/>
+              </StackLayout>
+              <!--時間表示　下方-->
+              <Label Text="{Binding YyyyMMddItem}" TextColor="Navy"/>
             </StackLayout>
           </ViewCell>
         </DataTemplate>
       </ListView.ItemTemplate>
     </ListView>
-    <!--<ListView x:Name="msgListView" ItemsSource="{Binding}"  VerticalOptions="FillAndExpand">
-      <ListView.ItemTemplate>
-        <DataTemplate>
-          <TextCell Text="{Binding TextItem}" Detail="{Binding DetailItem}"  DetailColor="Blue" />
-                    <ViewCell>
-            <StackLayout Orientation="Horizontal" Padding="5">
-              <Label Text="{Binding TextItem}" TextColor="Fuchsia"/>
-              <Label Text="{Binding DetailItem}"  TextColor="Navy"/>
-            </StackLayout>
-          </ViewCell>
-        </DataTemplate>
-      </ListView.ItemTemplate>
-    </ListView>-->
     <StackLayout Orientation="Vertical" >
       <Entry x:Name="msgEntry" Placeholder="ここにメッセージ入力してね。・・・・" Keyboard="Text"/>
-      <!--<StackLayout Padding="5,10">-->
-             <Editor x:Name="editor" BackgroundColor="White" HeightRequest="50"/>
-               <!-- <Editor.BackgroundColor>
-                 <OnPlatform x:TypeArguments="Color"
-                                        iOS="#f0ffff"
-                                        Android="#f0ffff"
-                                        WinPhone="#f0ffff" />
-               </Editor.BackgroundColor>
-            </Editor>-->
-      <!--</StackLayout>-->
+      <Editor x:Name="editor" BackgroundColor="#f0ffff" HeightRequest="50"/>
       <Button x:Name="sendBt" Text="メッセージ送信" WidthRequest="80" Clicked="OnSendTapped" />
     </StackLayout>
   </StackLayout>
 </ContentPage>
+
+
+
