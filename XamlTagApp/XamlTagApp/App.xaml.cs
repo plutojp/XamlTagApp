@@ -12,8 +12,11 @@ namespace XamlTagApp
         public App()
         {
             InitializeComponent();
-
-            MainPage = new XamlTagApp.MainPage();
+            MainPage = new CalcPage();
+            //MainPage = new ListViewPage1();
+            //MainPage = new XamlTagApp.MainPage();
+            //Master Detail Page に関しては調査中
+            //MainPage = new XamlTagApp.MasterDetailPage11();
         }
 
         protected override void OnStart()

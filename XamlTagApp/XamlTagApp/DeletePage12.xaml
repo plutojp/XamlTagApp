@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XamlTagApp.DeletePage12">
+    <StackLayout Padding="10">
+        <Label x:Name="ページタイトル" Text="削除画面" FontSize="Medium" TextColor="Red"/>
+        <StackLayout Padding="5,5,5,5" VerticalOptions="FillAndExpand" HorizontalOptions="Center" Orientation="Horizontal">
+            <Label x:Name="TitleLabel"  Text="{Binding TextItem}" />
+            <Label x:Name="DetailLabel"  Text="{Binding DetailItem}" />
+            <Label x:Name="DetailLabel"  Text="{Binding YyyyMMddItem}" />
+            <Button x:Name="DeleteBtn" />
+        </StackLayout>
+    </StackLayout>
+</ContentPage>

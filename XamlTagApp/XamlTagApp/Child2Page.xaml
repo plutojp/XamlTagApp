@@ -16,8 +16,8 @@
         <Button x:Name="firstBt" Text="先頭" WidthRequest="20" Clicked="OnFirstView" />
         <Button x:Name="lastBt" Text="最後" WidthRequest="20" Clicked="OnLastView" />
      </StackLayout>-->
-     <ListView x:Name="msgListView" VerticalOptions="FillAndExpand" HasUnevenRows="True" ItemSelected="OnItemSelected">
-    <!--<ListView x:Name="msgListView" VerticalOptions="FillAndExpand" HasUnevenRows="True">-->
+    <ListView x:Name="msgListView" VerticalOptions="FillAndExpand" HasUnevenRows="True" ItemSelected="OnItemSelected">
+      <!--<ListView x:Name="msgListView" VerticalOptions="FillAndExpand" HasUnevenRows="True">-->
       <!-- ListViewの各項目の高さが可変になる-->
       <ListView.ItemTemplate>
         <DataTemplate>
@@ -25,12 +25,13 @@
           <!-- <TextCell Text="{Binding TextItem}" Detail="{Binding DetailItem}"  DetailColor="Blue" />-->
           <!-- 表示を自分でカスタムする時の記載方法 ※細かい表示設定の時はCustomViewを作って1行で記載した法が簡潔にコーディングできていい。 -->
           <ViewCell>
+            <!-- タブページと併用しているためなので、コンテキストアクションが有効にならない(T.T) -->
             <ViewCell.ContextActions>
-            <MenuItem Clicked="OnMore" CommandParameter="{Binding .}"
-               Text="More" />
-            <MenuItem Clicked="OnDelete" CommandParameter="{Binding .}"
-               Text="Delete" IsDestructive="True" />
-         </ViewCell.ContextActions>
+              <MenuItem Clicked="OnMore" CommandParameter="{Binding .}"
+                 Text="More" />
+              <MenuItem Clicked="OnDelete" CommandParameter="{Binding .}"
+                 Text="Delete" IsDestructive="True" />
+            </ViewCell.ContextActions>
             <StackLayout BackgroundColor="White" Orientation="Vertical" Padding="15,0" VerticalOptions="Start">
               <Label Text="{Binding ItemId}" TextColor="Transparent"/>
               <!-- 入力データ表示 -->

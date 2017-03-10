@@ -40,19 +40,53 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="Calc.cs" />
+    <Compile Include="CalcPage.xaml.cs">
+      <DependentUpon>CalcPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Child1Page.xaml.cs">
       <DependentUpon>Child1Page.xaml</DependentUpon>
     </Compile>
     <Compile Include="Child2Page.xaml.cs">
       <DependentUpon>Child2Page.xaml</DependentUpon>
     </Compile>
+    <Compile Include="DeletePage1.cs" />
+    <Compile Include="DeletePage12.xaml.cs">
+      <DependentUpon>DeletePage12.xaml</DependentUpon>
+    </Compile>
     <Compile Include="HttpReq.cs" />
     <Compile Include="ListItem.cs" />
+    <Compile Include="ListViewPage1.xaml.cs">
+      <DependentUpon>ListViewPage1.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="MasterDetailMain.xaml.cs">
+      <DependentUpon>MasterDetailMain.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MasterDetailMainDetail.xaml.cs">
+      <DependentUpon>MasterDetailMainDetail.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MasterDetailMainMaster.xaml.cs">
+      <DependentUpon>MasterDetailMainMaster.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainMenuItem.cs" />
+    <Compile Include="MasterDetailSub1.xaml.cs">
+      <DependentUpon>MasterDetailSub1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MasterDMenu.xaml.cs">
+      <DependentUpon>MasterDMenu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MdMenuPage.xaml.cs">
+      <DependentUpon>MdMenuPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MyCell.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RootPageViewModel.cs" />
+    <Compile Include="SettingPage1.xaml.cs">
+      <DependentUpon>SettingPage1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TestViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="MainPage.xaml">
@@ -90,6 +124,69 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Child1Page.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="setting16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="SettingPage1.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ListViewPage1.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="DeletePage12.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="CalcPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="MasterDMenu.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="MasterDetailMain.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="MasterDetailMainMaster.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="MasterDetailMainDetail.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="MasterDetailSub1.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="MdMenuPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>

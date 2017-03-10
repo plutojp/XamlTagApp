@@ -5,23 +5,23 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Collections.ObjectModel;
 
-
-
 using Xamarin.Forms;
+using Xamarin.Forms.Xaml;
 
 namespace XamlTagApp
 {
-    public partial class Child2Page : ContentPage
+    [XamlCompilation(XamlCompilationOptions.Compile)]
+    public partial class ListViewPage1 : ContentPage
     {
         public static int id = 0;
         //private ObservableCollection<string> msgList = new ObservableCollection<string>();
         private ObservableCollection<ListItem> msgList = new ObservableCollection<ListItem>();
 
-        ~Child2Page()
+        ~ListViewPage1()
         {
             System.Diagnostics.Debug.WriteLine("※※※※※※　Child2Page OUT ※※※※※※※※※※※");
         }
-        public Child2Page()
+        public ListViewPage1()
         {
             InitializeComponent();
             Title = "message";
@@ -43,7 +43,7 @@ namespace XamlTagApp
                 {
 
                     string editorStr = editor.Text;
-                    string summaryStr = editor.Text.Substring(0, (editorStr.Length> 10)?10: editorStr.Length);
+                    string summaryStr = editor.Text.Substring(0, (editorStr.Length > 10) ? 10 : editorStr.Length);
                     msgList.Add(new ListItem { TextItem = msgEntry.Text, SummaryItem = summaryStr, DetailItem = editorStr, YyyyMMddItem = DateTime.Now.ToString() });
                     //msgList.Add(msgEntry.Text);
 
@@ -95,15 +95,17 @@ namespace XamlTagApp
         void OnMore(object sender, EventArgs args)
         {
             var mi = ((MenuItem)sender);
-            DisplayAlert("項目", mi.CommandParameter + "です。", "OK");
+            DisplayAlert("項目",((ListItem) mi.CommandParameter).TextItem + "です。", "OK");
         }
 
         void OnDelete(object sender, EventArgs args)
         {
-            if (sender!=null)
+            if (sender != null)
             {
                 var mi = ((MenuItem)sender);
-                DisplayAlert("削除項目",mi.CommandParameter+"を削除します。","削除");
+                DisplayAlert("削除項目", ((ListItem)mi.CommandParameter).TextItem + "を削除します。", "削除");
+                msgList.Remove(((ListItem)mi.CommandParameter));
+
             }
             /*if (args.SelectedItem != null)
             {

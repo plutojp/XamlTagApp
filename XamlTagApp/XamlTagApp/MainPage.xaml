@@ -7,7 +7,18 @@
   <!--<Label Text="Welcome to Xamarin Forms!"
            VerticalOptions="Center"
            HorizontalOptions="Center" />-->
-  <TabbedPage.Padding>
+    <!--<TabbedPage.ToolbarItems>
+        <ToolbarItem Text="設定 ≡" Icon="setting16.png" Clicked="ClickSetting" />
+        <ToolbarItem Text="設定 ≡" Icon="setting16.png"  Clicked="xxx">
+            <ToolbarItem.Icon>
+                <OnPlatform x:TypeArguments="FileImageSource"
+                  iOS=""
+                  Android=""
+                  WinPhone="setting.png" />
+            </ToolbarItem.Icon>
+        </ToolbarItem>
+    </TabbedPage.ToolbarItems>-->
+    <TabbedPage.Padding>
     <OnPlatform x:TypeArguments="Thickness" Android="20, 20, 20, 20"
                 iOS="20, 20, 20, 20" />
   </TabbedPage.Padding>

@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XamlTagApp.MasterDetailMain"
+             xmlns:pages="clr-namespace:XamlTagApp;assembly=XamlTagApp"
+             IsPresented="{Binding IsPresented, Mode=TwoWay}"     >
+    <MasterDetailPage.Master>
+        <!--<pages:MasterDetailMainMaster x:Name="MasterPage" />-->
+        <pages:MdMenuPage x:Name="MenuPage" />
+    </MasterDetailPage.Master>
+    <MasterDetailPage.Detail>
+        <ContentPage Title="カラリオ" />
+        <!--<NavigationPage>
+            <x:Arguments>
+                <pages:MasterDetailMainDetail />
+            </x:Arguments>
+        </NavigationPage>-->
+    </MasterDetailPage.Detail>
+</MasterDetailPage>
